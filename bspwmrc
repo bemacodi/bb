@@ -1,0 +1,37 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+##sxhkd &
+##xrandr -s 1366x768 &
+$HOME/.config/polybar/launch.sh & 
+picom &
+##compton --restore &
+# polybar example &
+# tint2 &
+setxkbmap -layout latam &
+ nitrogen --restore &
+# feh --bg-fill /home/benjamin/Descargas/xico/x.png
+
+
+bspc monitor -d 1 2 3 4 5 6 7 8
+# bspc monitor MONITOR_SECUNDARIO -d VII VIII
+
+bspc config border_width         0
+bspc config window_gap           2 
+
+bspc config split_ratio          0.56
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+# obspc rule -a crx_pjibgclleladliembfgfagdaldikeohf desktop='^4'
+# bspc rule -a Spotify desktop='^4'
+
+# bspc rule -a Vivaldi-snapshot desktop='^1'
+bspc rule -a code-oss desktop='^2'
+bspc rule -a Brave-browser desktop='^4'
+bspc rule -a Spotify desktop='^3'
+bspc rule -a Opera desktop='^2'
+bspc rule -a mplayer state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
